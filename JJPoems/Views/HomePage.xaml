@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage
+    x:Class="JJPoems.Views.HomePage"
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:models="clr-namespace:JJPoems.Models"
+    xmlns:viewModels="clr-namespace:JJPoems.ViewModels"
+    x:DataType="viewModels:HomeViewModel"
+    x:Name="PageRoot"
+    Shell.NavBarIsVisible="False">
+
+    <Grid>
+        <AbsoluteLayout InputTransparent="True">
+            <Border
+                AbsoluteLayout.LayoutBounds="0.94,0.08,170,170"
+                AbsoluteLayout.LayoutFlags="PositionProportional"
+                Background="{DynamicResource ThemeWarmGlowBrush}"
+                Opacity="0.75"
+                StrokeThickness="0"
+                StrokeShape="RoundRectangle 85" />
+            <Border
+                AbsoluteLayout.LayoutBounds="0.08,0.35,120,120"
+                AbsoluteLayout.LayoutFlags="PositionProportional"
+                Background="{DynamicResource ThemeAccentGlowBrush}"
+                Opacity="0.5"
+                StrokeThickness="0"
+                StrokeShape="RoundRectangle 60" />
+        </AbsoluteLayout>
+
+        <ScrollView>
+            <VerticalStackLayout Padding="24,24,24,32" Spacing="28">
+                <Border Style="{StaticResource HeroCardStyle}">
+                    <VerticalStackLayout Spacing="20">
+                        <HorizontalStackLayout Spacing="14">
+                            <Image Source="jjovky_mark.svg" HeightRequest="52" WidthRequest="52" VerticalOptions="Start" />
+                            <VerticalStackLayout Spacing="6">
+                                <Label Text="{Binding WelcomeName}" Style="{StaticResource DisplayTitleLabelStyle}" />
+                                <Label Text="Tvoj osobny literarny priestor" Style="{StaticResource OverlineLabelStyle}" />
+                            </VerticalStackLayout>
+                        </HorizontalStackLayout>
+
+                        <Label Text="{Binding SpaceTagline}" Style="{StaticResource HeroBodyLabelStyle}" />
+
+                        <Border Style="{StaticResource PremiumPanelStyle}" Padding="18,16">
+                            <VerticalStackLayout Spacing="8">
+                                <Label Text="Tvoj rytmus" Style="{StaticResource OverlineLabelStyle}" />
+                                <Label Text="{Binding PersonalSummary}" Style="{StaticResource BodyMutedLabelStyle}" />
+                            </VerticalStackLayout>
+                        </Border>
+
+                        <Grid ColumnDefinitions="*,*" ColumnSpacing="12">
+                            <Button Grid.Column="0" Text="Zachytit myslienku" Style="{StaticResource PrimaryButtonStyle}" Command="{Binding GoToQuickCaptureCommand}" />
+                            <Button Grid.Column="1" Text="Otvorit tvorbu" Style="{StaticResource SecondaryButtonStyle}" Command="{Binding GoToStudioCommand}" />
+                        </Grid>
+                    </VerticalStackLayout>
+                </Border>
+
+                <Grid ColumnDefinitions="*,*" ColumnSpacing="14">
+                    <Border Grid.Column="0" Style="{StaticResource PremiumPanelStyle}">
+                        <VerticalStackLayout Spacing="8">
+                            <Label Text="Sekcie" Style="{StaticResource OverlineLabelStyle}" />
+                            <Label Text="Basnicky, vylev hlavy, sny, dennik a napady. Kazdy blok moze mat vlastny farebny ton." Style="{StaticResource BodyMutedLabelStyle}" />
+                        </VerticalStackLayout>
+                    </Border>
+                    <Border Grid.Column="1" Style="{StaticResource PremiumPanelStyle}">
+                        <VerticalStackLayout Spacing="8">
+                            <Label Text="Casova stopa" Style="{StaticResource OverlineLabelStyle}" />
+                            <Label Text="Pozri si svoje myslienky a texty usporiadane podla dni a vrat sa do vlastneho rytmu." Style="{StaticResource BodyMutedLabelStyle}" />
+                        </VerticalStackLayout>
+                    </Border>
+                </Grid>
+
+                <Button Text="Otvorit casovu stopu" Style="{StaticResource SecondaryButtonStyle}" Command="{Binding GoToTimelineCommand}" />
+
+                <Border Style="{StaticResource PremiumPanelStyle}" IsVisible="{Binding HasRecentWriting}">
+                    <Border.GestureRecognizers>
+                        <TapGestureRecognizer Command="{Binding OpenRecentWritingCommand}" />
+                    </Border.GestureRecognizers>
+                    <VerticalStackLayout Spacing="10">
+                        <Label Text="Posledny dotyk tvojho textu" Style="{StaticResource SectionTitleLabelStyle}" />
+                        <Label Text="{Binding RecentWritingTitle}" Style="{StaticResource PoemTitleLabelStyle}" />
+                        <Label Text="{Binding RecentWritingPreview}" Style="{StaticResource BodyMutedLabelStyle}" />
+                        <Label Text="Otvorit na citanie ›" Style="{StaticResource OverlineLabelStyle}" />
+                    </VerticalStackLayout>
+                </Border>
+
+                <VerticalStackLayout Spacing="10">
+                    <Grid ColumnDefinitions="*,Auto" ColumnSpacing="12">
+                        <Label Text="Vyvojova kolekcia" Style="{StaticResource SectionTitleLabelStyle}" />
+                        <Button Grid.Column="1" Text="O kolekcii" Style="{StaticResource SecondaryButtonStyle}" Command="{Binding GoToAboutCommand}" Padding="14,10" />
+                    </Grid>
+                    <Label
+                        Text="Vybrane texty, ktore sluzia ako inspiracia pre citanie a pre ton celej aplikacie."
+                        Style="{StaticResource BodyMutedLabelStyle}" />
+                </VerticalStackLayout>
+
+                <CollectionView ItemsSource="{Binding FeaturedPoems}" SelectionMode="None">
+                    <CollectionView.ItemTemplate>
+                        <DataTemplate x:DataType="models:Poem">
+                            <Border Style="{StaticResource PremiumPanelStyle}">
+                                <Border.GestureRecognizers>
+                                    <TapGestureRecognizer
+                                        Command="{Binding BindingContext.OpenPoemCommand, Source={x:Reference PageRoot}}"
+                                        CommandParameter="{Binding .}" />
+                                </Border.GestureRecognizers>
+                                <VerticalStackLayout Spacing="12">
+                                    <HorizontalStackLayout Spacing="8">
+                                        <Label Text="{Binding Theme}" Style="{StaticResource TagLabelStyle}" />
+                                        <Label Text="{Binding Mood}" Style="{StaticResource TagLabelStyle}" />
+                                        <Label Text="{Binding ReadingTimeLabel}" Style="{StaticResource TagLabelStyle}" />
+                                    </HorizontalStackLayout>
+                                    <Label Text="{Binding Title}" Style="{StaticResource PoemTitleLabelStyle}" />
+                                    <Label Text="{Binding Preview}" Style="{StaticResource BodyMutedLabelStyle}" />
+                                </VerticalStackLayout>
+                            </Border>
+                        </DataTemplate>
+                    </CollectionView.ItemTemplate>
+                </CollectionView>
+            </VerticalStackLayout>
+        </ScrollView>
+    </Grid>
+</ContentPage>

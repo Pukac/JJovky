@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage
+    x:Class="JJPoems.Views.PoemsPage"
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:models="clr-namespace:JJPoems.Models"
+    xmlns:viewModels="clr-namespace:JJPoems.ViewModels"
+    x:DataType="viewModels:PoemsViewModel"
+    x:Name="PageRoot"
+    Title="Inspiracia">
+
+    <Grid Padding="24,16,24,0" RowDefinitions="Auto,*">
+        <VerticalStackLayout Spacing="14">
+            <Label Text="Inspiracia" Style="{StaticResource PageTitleLabelStyle}" />
+            <Label
+                Text="Vyhladavaj v developerskej kolekcii podla nazvu, temy alebo nalady a najdi text, ktory ta dnes niekam posunie."
+                Style="{StaticResource BodyMutedLabelStyle}" />
+            <Border Style="{StaticResource PremiumPanelStyle}" Padding="10,4">
+                <SearchBar Placeholder="Hladaj v inspiracnej kolekcii" Text="{Binding SearchText}" />
+            </Border>
+        </VerticalStackLayout>
+
+        <CollectionView Grid.Row="1" ItemsSource="{Binding FilteredPoems}" Margin="0,20,0,0" SelectionMode="None">
+            <CollectionView.ItemTemplate>
+                <DataTemplate x:DataType="models:Poem">
+                    <Border Style="{StaticResource PremiumPanelStyle}">
+                        <Border.GestureRecognizers>
+                            <TapGestureRecognizer
+                                Command="{Binding BindingContext.OpenPoemCommand, Source={x:Reference PageRoot}}"
+                                CommandParameter="{Binding .}" />
+                        </Border.GestureRecognizers>
+                        <Grid ColumnDefinitions="*,Auto" ColumnSpacing="12">
+                            <VerticalStackLayout Spacing="12">
+                                <FlexLayout Direction="Row" Wrap="Wrap" AlignItems="Center">
+                                    <Label Text="{Binding Theme}" Style="{StaticResource TagLabelStyle}" Margin="0,0,8,8" />
+                                    <Label Text="{Binding Mood}" Style="{StaticResource TagLabelStyle}" Margin="0,0,8,8" />
+                                    <Label Text="{Binding ReadingTimeLabel}" Style="{StaticResource TagLabelStyle}" Margin="0,0,8,8" />
+                                </FlexLayout>
+                                <Label Text="{Binding Title}" Style="{StaticResource PoemTitleLabelStyle}" />
+                                <Label Text="{Binding Preview}" Style="{StaticResource BodyMutedLabelStyle}" />
+                            </VerticalStackLayout>
+                            <Label Grid.Column="1" Text="›" FontFamily="{StaticResource SerifFontFamily}" FontSize="28" VerticalOptions="Center" TextColor="{DynamicResource ThemeAccent}" />
+                        </Grid>
+                    </Border>
+                </DataTemplate>
+            </CollectionView.ItemTemplate>
+        </CollectionView>
+    </Grid>
+</ContentPage>

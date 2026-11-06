@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage
+    x:Class="JJPoems.Views.StudioPage"
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:models="clr-namespace:JJPoems.Models"
+    xmlns:viewModels="clr-namespace:JJPoems.ViewModels"
+    x:DataType="viewModels:StudioViewModel"
+    x:Name="PageRoot"
+    Title="Tvorba">
+
+    <Grid Padding="24,16,24,0" RowDefinitions="Auto,*">
+        <VerticalStackLayout Spacing="14">
+            <Label Text="{Binding ProfileHeadline}" Style="{StaticResource PageTitleLabelStyle}" />
+            <Label
+                Text="Priestor pre vlastne basne, poznamky, dennikove zaznamy aj surove myslienkove pochody."
+                Style="{StaticResource BodyMutedLabelStyle}" />
+            <Grid ColumnDefinitions="*,*" ColumnSpacing="12">
+                <Button Grid.Column="0" Text="Zachytit myslienku" Style="{StaticResource PrimaryButtonStyle}" Command="{Binding QuickCaptureCommand}" />
+                <Button Grid.Column="1" Text="Novy blok" Style="{StaticResource SecondaryButtonStyle}" Command="{Binding CreateNewCommand}" />
+            </Grid>
+            <Button Text="Otvorit casovu stopu" Style="{StaticResource SecondaryButtonStyle}" Command="{Binding GoToTimelineCommand}" />
+            <Border Style="{StaticResource PremiumPanelStyle}" Padding="12,2">
+                <Picker Title="Filtrovat podla sekcie" ItemsSource="{Binding SectionFilters}" SelectedItem="{Binding SelectedSectionFilter}" />
+            </Border>
+        </VerticalStackLayout>
+
+        <ScrollView Grid.Row="1" Margin="0,20,0,0">
+            <VerticalStackLayout Spacing="0">
+                <Border Style="{StaticResource PremiumPanelStyle}" IsVisible="{Binding HasEntries, Converter={StaticResource InvertedBoolConverter}}">
+                    <VerticalStackLayout Spacing="10">
+                        <Label Text="Zatial je tu ticho" Style="{StaticResource SectionTitleLabelStyle}" />
+                        <Label Text="Zacni prvym textom. Moze to byt basnicka, kratka poznamka, sen, dennik alebo neuhladeny vnutorny tok." Style="{StaticResource BodyMutedLabelStyle}" />
+                    </VerticalStackLayout>
+                </Border>
+
+                <CollectionView ItemsSource="{Binding Writings}" SelectionMode="None">
+                    <CollectionView.ItemTemplate>
+                        <DataTemplate x:DataType="models:UserWriting">
+                            <Border
+                                Style="{StaticResource PremiumPanelStyle}"
+                                BackgroundColor="{Binding SectionSurfaceHex}"
+                                Stroke="{Binding SectionBorderHex}">
+                                <Border.GestureRecognizers>
+                                    <TapGestureRecognizer
+                                        Command="{Binding BindingContext.OpenWritingCommand, Source={x:Reference PageRoot}}"
+                                        CommandParameter="{Binding .}" />
+                                </Border.GestureRecognizers>
+                                <VerticalStackLayout Spacing="14">
+                                    <Grid ColumnDefinitions="6,*,Auto" ColumnSpacing="12">
+                                        <Border Grid.Column="0" BackgroundColor="{Binding SectionAccentHex}" StrokeThickness="0" StrokeShape="RoundRectangle 3" />
+                                        <VerticalStackLayout Grid.Column="1" Spacing="8">
+                                            <FlexLayout Direction="Row" Wrap="Wrap" AlignItems="Center">
+                                                <Border BackgroundColor="{Binding SectionTagHex}" StrokeThickness="0" StrokeShape="RoundRectangle 10" Padding="10,6" Margin="0,0,8,8">
+                                                    <Label Text="{Binding Section}" TextColor="{Binding SectionAccentHex}" FontSize="12" FontFamily="{StaticResource SansFontSemiBold}" />
+                                                </Border>
+                                                <Label Text="{Binding Mood}" Style="{StaticResource TagLabelStyle}" Margin="0,0,8,8" IsVisible="{Binding Mood, Converter={StaticResource HasTextConverter}}" />
+                                                <Label Text="{Binding ReadingTimeLabel}" Style="{StaticResource TagLabelStyle}" Margin="0,0,8,8" />
+                                            </FlexLayout>
+                                            <Label Text="{Binding Title}" Style="{StaticResource PoemTitleLabelStyle}" />
+                                            <Label Text="{Binding Preview}" Style="{StaticResource BodyMutedLabelStyle}" />
+                                        </VerticalStackLayout>
+                                        <VerticalStackLayout Grid.Column="2" Spacing="6" HorizontalOptions="End">
+                                            <Label Text="{Binding DisplayDate}" Style="{StaticResource CaptionLabelStyle}" HorizontalTextAlignment="End" />
+                                            <Label Text="›" FontFamily="{StaticResource SerifFontFamily}" FontSize="28" HorizontalTextAlignment="End" TextColor="{Binding SectionAccentHex}" />
+                                        </VerticalStackLayout>
+                                    </Grid>
+                                </VerticalStackLayout>
+                            </Border>
+                        </DataTemplate>
+                    </CollectionView.ItemTemplate>
+                </CollectionView>
+            </VerticalStackLayout>
+        </ScrollView>
+    </Grid>
+</ContentPage>

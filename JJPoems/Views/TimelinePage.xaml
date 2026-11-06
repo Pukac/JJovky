@@ -1,0 +1,153 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage
+    x:Class="JJPoems.Views.TimelinePage"
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:models="clr-namespace:JJPoems.Models"
+    xmlns:viewModels="clr-namespace:JJPoems.ViewModels"
+    x:DataType="viewModels:TimelineViewModel"
+    x:Name="PageRoot"
+    Title="Casova stopa">
+
+    <ScrollView>
+        <VerticalStackLayout Padding="24,16,24,28" Spacing="18">
+            <VerticalStackLayout Spacing="14">
+                <Label Text="Casova stopa" Style="{StaticResource PageTitleLabelStyle}" />
+                <Label Text="{Binding Summary}" Style="{StaticResource BodyMutedLabelStyle}" />
+                <Button Text="Zachytit myslienku" Style="{StaticResource PrimaryButtonStyle}" Command="{Binding GoToQuickCaptureCommand}" />
+            </VerticalStackLayout>
+
+            <Border Style="{StaticResource PremiumPanelStyle}" IsVisible="{Binding HasEntries, Converter={StaticResource InvertedBoolConverter}}">
+                <VerticalStackLayout Spacing="10">
+                    <Label Text="Tvoj pribeh sa este len rozbieha" Style="{StaticResource SectionTitleLabelStyle}" />
+                    <Label Text="Ked si zapises prvy zachyt, objavi sa tu ako zaciatok tvojej osobnej casovej mapy." Style="{StaticResource BodyMutedLabelStyle}" />
+                </VerticalStackLayout>
+            </Border>
+
+            <Border Style="{StaticResource HeroCardStyle}" Padding="12" >
+                <VerticalStackLayout Spacing="18">
+                    <Grid ColumnDefinitions="Auto,*,Auto" VerticalOptions="Center">
+                        <Button Text="&#x2039;" Style="{StaticResource SecondaryButtonStyle}" WidthRequest="54" HeightRequest="54" Padding="0" Command="{Binding PreviousMonthCommand}" />
+                        <VerticalStackLayout Grid.Column="1" Spacing="4" HorizontalOptions="Center" Margin="12,0">
+                            <Label Text="{Binding CurrentMonthLabel}" Style="{StaticResource SectionTitleLabelStyle}" HorizontalTextAlignment="Center" />
+                            <Label Text="{Binding MonthSummary}" Style="{StaticResource CaptionLabelStyle}" HorizontalTextAlignment="Center" />
+                        </VerticalStackLayout>
+                        <Button Grid.Column="2" Text="&#x203A;" Style="{StaticResource SecondaryButtonStyle}" WidthRequest="54" HeightRequest="54" Padding="0" Command="{Binding NextMonthCommand}" />
+                    </Grid>
+
+                    <Grid ColumnDefinitions="*,*,*,*,*,*,*" ColumnSpacing="8">
+                        <Label Text="Po" Grid.Column="0" Style="{StaticResource OverlineLabelStyle}" HorizontalTextAlignment="Center" />
+                        <Label Text="Ut" Grid.Column="1" Style="{StaticResource OverlineLabelStyle}" HorizontalTextAlignment="Center" />
+                        <Label Text="St" Grid.Column="2" Style="{StaticResource OverlineLabelStyle}" HorizontalTextAlignment="Center" />
+                        <Label Text="Stv" Grid.Column="3" Style="{StaticResource OverlineLabelStyle}" HorizontalTextAlignment="Center" />
+                        <Label Text="Pi" Grid.Column="4" Style="{StaticResource OverlineLabelStyle}" HorizontalTextAlignment="Center" />
+                        <Label Text="So" Grid.Column="5" Style="{StaticResource OverlineLabelStyle}" HorizontalTextAlignment="Center" />
+                        <Label Text="Ne" Grid.Column="6" Style="{StaticResource OverlineLabelStyle}" HorizontalTextAlignment="Center" />
+                    </Grid>
+
+                    <CollectionView
+                        ItemsSource="{Binding CalendarDays}"
+                        HeightRequest="360"
+                        SelectionMode="None"
+                        VerticalScrollBarVisibility="Never">
+                        <CollectionView.ItemsLayout>
+                            <GridItemsLayout Orientation="Vertical" Span="7" VerticalItemSpacing="4" HorizontalItemSpacing="4" />
+                        </CollectionView.ItemsLayout>
+                        <CollectionView.ItemTemplate>
+                            <DataTemplate x:DataType="viewModels:TimelineCalendarDayViewModel">
+                                <Border
+                                    Padding="0,5"
+                                    BackgroundColor="{DynamicResource ThemePanel}"
+                                    Stroke="{DynamicResource ThemeBorderDivider}"
+                                    StrokeThickness="1.5"
+                                    HeightRequest="56">
+                                    <Border.Triggers>
+                                        <DataTrigger TargetType="Border" Binding="{Binding IsSelected}" Value="True">
+                                            <Setter Property="Stroke" Value="{DynamicResource ThemeAccent}" />
+                                            <Setter Property="BackgroundColor" Value="{DynamicResource ThemeSecondaryBackground}" />
+                                        </DataTrigger>
+                                    </Border.Triggers>
+                                    <Border.StrokeShape>
+                                        <RoundRectangle CornerRadius="20" />
+                                    </Border.StrokeShape>
+                                    <Border.GestureRecognizers>
+                                        <TapGestureRecognizer
+                                            Command="{Binding BindingContext.SelectCalendarDayCommand, Source={x:Reference PageRoot}}"
+                                            CommandParameter="{Binding .}" />
+                                    </Border.GestureRecognizers>
+                                    <Grid RowDefinitions="Auto,*,Auto">
+                                        <Label Text="{Binding DayNumber}" FontFamily="{StaticResource SansFontSemiBold}" HorizontalTextAlignment="Center">
+                                            <Label.Triggers>
+                                                <DataTrigger TargetType="Label" Binding="{Binding IsCurrentMonth}" Value="False">
+                                                    <Setter Property="TextColor" Value="{DynamicResource ThemeSecondaryText}" />
+                                                    <Setter Property="Opacity" Value="0.55" />
+                                                </DataTrigger>
+                                                <DataTrigger TargetType="Label" Binding="{Binding IsSelected}" Value="True">
+                                                    <Setter Property="TextColor" Value="{DynamicResource ThemeAccent}" />
+                                                </DataTrigger>
+                                            </Label.Triggers>
+                                        </Label>
+                                        <Border
+                                            Grid.Row="1"
+                                            WidthRequest="10"
+                                            HeightRequest="10"
+                                            HorizontalOptions="Center"
+                                            VerticalOptions="Center"
+                                            BackgroundColor="{DynamicResource ThemeAccent}"
+                                            StrokeThickness="0"
+                                            IsVisible="{Binding HasEntries}">
+                                            <Border.StrokeShape>
+                                                <RoundRectangle CornerRadius="5" />
+                                            </Border.StrokeShape>
+                                        </Border>
+                                        <Label Grid.Row="2" Text="{Binding EntryCountLabel}" Style="{StaticResource CaptionLabelStyle}" HorizontalTextAlignment="Center" />
+                                    </Grid>
+                                </Border>
+                            </DataTemplate>
+                        </CollectionView.ItemTemplate>
+                    </CollectionView>
+                </VerticalStackLayout>
+            </Border>
+
+            <VerticalStackLayout Spacing="10" IsVisible="{Binding HasEntries}">
+                <Label Text="{Binding SelectedDayTitle}" Style="{StaticResource SectionTitleLabelStyle}" />
+                <Label Text="{Binding SelectedDaySubtitle}" Style="{StaticResource CaptionLabelStyle}" />
+            </VerticalStackLayout>
+
+            <Border Style="{StaticResource PremiumPanelStyle}" IsVisible="{Binding HasSelectedDayEntries, Converter={StaticResource InvertedBoolConverter}}">
+                <VerticalStackLayout Spacing="12">
+                    <Label Text="Pre tento den je zatial ticho" Style="{StaticResource SectionTitleLabelStyle}" />
+                    <Label Text="Mozno prave dnes vznikne nova basen, sen alebo rychly zachyt mysle." Style="{StaticResource BodyMutedLabelStyle}" />
+                </VerticalStackLayout>
+            </Border>
+
+            <VerticalStackLayout BindableLayout.ItemsSource="{Binding SelectedDayEntries}" IsVisible="{Binding HasSelectedDayEntries}">
+                <BindableLayout.ItemTemplate>
+                    <DataTemplate x:DataType="models:UserWriting">
+                        <Border
+                            Style="{StaticResource PremiumPanelStyle}"
+                            BackgroundColor="{Binding SectionSurfaceHex}"
+                            Stroke="{Binding SectionBorderHex}">
+                            <Border.GestureRecognizers>
+                                <TapGestureRecognizer
+                                    Command="{Binding BindingContext.OpenWritingCommand, Source={x:Reference PageRoot}}"
+                                    CommandParameter="{Binding .}" />
+                            </Border.GestureRecognizers>
+                            <VerticalStackLayout Spacing="12">
+                                <FlexLayout Direction="Row" Wrap="Wrap" AlignItems="Center">
+                                    <Border BackgroundColor="{Binding SectionTagHex}" StrokeThickness="0" StrokeShape="RoundRectangle 10" Padding="10,6" Margin="0,0,8,8">
+                                        <Label Text="{Binding Section}" TextColor="{Binding SectionAccentHex}" FontSize="12" FontFamily="{StaticResource SansFontSemiBold}" />
+                                    </Border>
+                                    <Label Text="{Binding Mood}" Style="{StaticResource TagLabelStyle}" Margin="0,0,8,8" IsVisible="{Binding Mood, Converter={StaticResource HasTextConverter}}" />
+                                    <Label Text="{Binding ReadingTimeLabel}" Style="{StaticResource TagLabelStyle}" Margin="0,0,8,8" />
+                                </FlexLayout>
+                                <Label Text="{Binding Title}" Style="{StaticResource PoemTitleLabelStyle}" />
+                                <Label Text="{Binding Preview}" Style="{StaticResource BodyMutedLabelStyle}" />
+                            </VerticalStackLayout>
+                        </Border>
+                    </DataTemplate>
+                </BindableLayout.ItemTemplate>
+            </VerticalStackLayout>
+        </VerticalStackLayout>
+    </ScrollView>
+</ContentPage>

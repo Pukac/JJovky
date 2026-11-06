@@ -1,0 +1,134 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage
+    x:Class="JJPoems.Views.ProfilePage"
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:models="clr-namespace:JJPoems.Models"
+    xmlns:viewModels="clr-namespace:JJPoems.ViewModels"
+    x:DataType="viewModels:ProfileViewModel"
+    x:Name="PageRoot"
+    Title="Profil">
+
+    <ScrollView>
+        <VerticalStackLayout Padding="24,18,24,32" Spacing="18">
+            <Border Style="{StaticResource HeroCardStyle}">
+                <VerticalStackLayout Spacing="14">
+                    <Label Text="Tvoj lokalny profil" Style="{StaticResource OverlineLabelStyle}" />
+                    <Label Text="{Binding DisplayName}" Style="{StaticResource PageTitleLabelStyle}" />
+                    <Label Text="{Binding Tagline}" Style="{StaticResource HeroBodyLabelStyle}" />
+                    <Grid ColumnDefinitions="Auto,*" ColumnSpacing="12">
+                        <Border BackgroundColor="{Binding ProfileAccentHex}" HeightRequest="18" WidthRequest="18" StrokeThickness="0" StrokeShape="RoundRectangle 9" />
+                        <VerticalStackLayout Grid.Column="1" Spacing="6">
+                            <Label Text="{Binding Email}" Style="{StaticResource CaptionLabelStyle}" />
+                            <Label Text="{Binding Bio}" Style="{StaticResource BodyMutedLabelStyle}" />
+                        </VerticalStackLayout>
+                    </Grid>
+                </VerticalStackLayout>
+            </Border>
+
+            <Border Style="{StaticResource PremiumPanelStyle}">
+                <VerticalStackLayout Spacing="16">
+                    <Label Text="Uprav si svoj priestor" Style="{StaticResource SectionTitleLabelStyle}" />
+                    <Entry Placeholder="Meno profilu" Text="{Binding DisplayName}" />
+                    <Entry Keyboard="Email" Placeholder="Email pre lokalny vstup" Text="{Binding Email}" />
+                    <Entry Placeholder="Kratka veta o tvojom priestore" Text="{Binding Tagline}" />
+                    <Editor AutoSize="TextChanges" MinimumHeightRequest="140" Placeholder="Co chces mat vo svojom profile? Preco pises?" Text="{Binding Bio}" />
+                    <Label Text="Tema celej aplikacie" Style="{StaticResource OverlineLabelStyle}" />
+
+                    <CollectionView ItemsSource="{Binding PaletteOptions}" SelectionMode="None">
+                        <CollectionView.ItemsLayout>
+                            <GridItemsLayout Orientation="Vertical" Span="2" VerticalItemSpacing="12" HorizontalItemSpacing="12" />
+                        </CollectionView.ItemsLayout>
+                        <CollectionView.ItemTemplate>
+                            <DataTemplate x:DataType="models:PaletteOption">
+                                <Border
+                                    BackgroundColor="{Binding CardHex}"
+                                    Stroke="{Binding SelectionStrokeHex}"
+                                    StrokeThickness="{Binding SelectionStrokeThickness}"
+                                    Padding="14"
+                                    StrokeShape="RoundRectangle 24">
+                                    <Border.GestureRecognizers>
+                                        <TapGestureRecognizer
+                                            Command="{Binding BindingContext.SelectPaletteCommand, Source={x:Reference PageRoot}}"
+                                            CommandParameter="{Binding .}" />
+                                    </Border.GestureRecognizers>
+                                    <VerticalStackLayout Spacing="10">
+                                        <Grid ColumnDefinitions="Auto,*" ColumnSpacing="10">
+                                            <Border BackgroundColor="{Binding AccentHex}" HeightRequest="18" WidthRequest="18" StrokeThickness="0" StrokeShape="RoundRectangle 9" />
+                                            <VerticalStackLayout Grid.Column="1" Spacing="2">
+                                                <Label Text="{Binding Name}" Style="{StaticResource PoemTitleLabelStyle}" FontSize="18" />
+                                                <Label Text="Ako bude posobit domov a citanie" Style="{StaticResource CaptionLabelStyle}" />
+                                            </VerticalStackLayout>
+                                        </Grid>
+
+                                        <Border BackgroundColor="{Binding PanelHex}" Stroke="{Binding BorderDividerHex}" StrokeShape="RoundRectangle 18" Padding="12">
+                                            <VerticalStackLayout Spacing="8">
+                                                <HorizontalStackLayout Spacing="6">
+                                                    <Border BackgroundColor="{Binding PreviewChipHex}" StrokeThickness="0" StrokeShape="RoundRectangle 8" Padding="8,4">
+                                                        <Label Text="Basnicky" TextColor="{Binding AccentHex}" FontSize="11" />
+                                                    </Border>
+                                                    <Border BackgroundColor="{Binding PreviewChipHex}" StrokeThickness="0" StrokeShape="RoundRectangle 8" Padding="8,4">
+                                                        <Label Text="Napady" TextColor="{Binding AccentHex}" FontSize="11" />
+                                                    </Border>
+                                                </HorizontalStackLayout>
+                                                <BoxView HeightRequest="10" WidthRequest="74" BackgroundColor="{Binding AccentHex}" Opacity="0.85" HorizontalOptions="Start" />
+                                                <BoxView HeightRequest="8" BackgroundColor="{Binding SecondaryBackgroundHex}" Opacity="0.9" HorizontalOptions="Fill" />
+                                                <BoxView HeightRequest="8" WidthRequest="110" BackgroundColor="{Binding SecondaryBackgroundHex}" Opacity="0.65" HorizontalOptions="Start" />
+                                            </VerticalStackLayout>
+                                        </Border>
+                                    </VerticalStackLayout>
+                                </Border>
+                            </DataTemplate>
+                        </CollectionView.ItemTemplate>
+                    </CollectionView>
+
+                    <Grid ColumnDefinitions="*,*" ColumnSpacing="12">
+                        <Button Grid.Column="0" Text="Ulozit profil" Style="{StaticResource PrimaryButtonStyle}" Command="{Binding SaveProfileCommand}" />
+                        <Button Grid.Column="1" Text="Zmenit lokalny profil" Style="{StaticResource SecondaryButtonStyle}" Command="{Binding SwitchProfileCommand}" />
+                    </Grid>
+                    <Label Text="Tvoje texty su ulozene v tomto telefone. E-mail oznacuje lokalny profil; prihlasenie cez internet a synchronizacia zatial nie su dostupne." Style="{StaticResource CaptionLabelStyle}" />
+                    <Label Text="Zaloha tvojich textov" Style="{StaticResource SectionTitleLabelStyle}" />
+                    <Label Text="Zalohu cez ponuku zdielania uloz mimo aplikacie, napr. do svojho disku. Obsahuje texty a profil v citatelnej podobe. Obnova prida chybajuce ulozene texty; rozpisane koncepty a oblubene z kolekcie nie su sucastou zalohy." Style="{StaticResource BodyMutedLabelStyle}" />
+                    <Button Text="Exportovat zalohu" Style="{StaticResource SecondaryButtonStyle}" Command="{Binding ExportCommand}" IsEnabled="{Binding IsBusy, Converter={StaticResource InvertedBoolConverter}}" />
+                    <Button Text="Obnovit texty zo zalohy" Style="{StaticResource SecondaryButtonStyle}" Command="{Binding ImportCommand}" IsEnabled="{Binding IsBusy, Converter={StaticResource InvertedBoolConverter}}" />
+                </VerticalStackLayout>
+            </Border>
+
+            <Border Style="{StaticResource PremiumPanelStyle}">
+                <VerticalStackLayout Spacing="14">
+                    <Grid ColumnDefinitions="*,Auto" ColumnSpacing="12">
+                        <Label Text="Oblubene texty z kolekcie" Style="{StaticResource SectionTitleLabelStyle}" />
+                        <Button Grid.Column="1" Text="O kolekcii" Style="{StaticResource SecondaryButtonStyle}" Command="{Binding GoToAboutCommand}" Padding="14,10" />
+                    </Grid>
+
+                    <Label
+                        IsVisible="{Binding HasFavorites, Converter={StaticResource InvertedBoolConverter}}"
+                        Text="Zatial tu nic nie je. Ked si nejaky text z inspiracnej kolekcie ulozis medzi oblubene, objavi sa prave tu."
+                        Style="{StaticResource BodyMutedLabelStyle}" />
+
+                    <CollectionView ItemsSource="{Binding FavoritePoems}" SelectionMode="None">
+                        <CollectionView.ItemTemplate>
+                            <DataTemplate x:DataType="models:Poem">
+                                <Border Style="{StaticResource CardBorderStyle}">
+                                    <Border.GestureRecognizers>
+                                        <TapGestureRecognizer
+                                            Command="{Binding BindingContext.OpenFavoriteCommand, Source={x:Reference PageRoot}}"
+                                            CommandParameter="{Binding .}" />
+                                    </Border.GestureRecognizers>
+                                    <VerticalStackLayout Spacing="10">
+                                        <FlexLayout Direction="Row" Wrap="Wrap" AlignItems="Center">
+                                            <Label Text="{Binding Theme}" Style="{StaticResource TagLabelStyle}" Margin="0,0,8,8" />
+                                            <Label Text="{Binding Mood}" Style="{StaticResource TagLabelStyle}" Margin="0,0,8,8" />
+                                        </FlexLayout>
+                                        <Label Text="{Binding Title}" Style="{StaticResource PoemTitleLabelStyle}" />
+                                        <Label Text="{Binding Preview}" Style="{StaticResource BodyMutedLabelStyle}" />
+                                    </VerticalStackLayout>
+                                </Border>
+                            </DataTemplate>
+                        </CollectionView.ItemTemplate>
+                    </CollectionView>
+                </VerticalStackLayout>
+            </Border>
+        </VerticalStackLayout>
+    </ScrollView>
+</ContentPage>

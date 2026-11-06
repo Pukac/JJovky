@@ -1,0 +1,15 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <OutputType>Exe</OutputType>
+    <TargetFramework>net10.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+  </PropertyGroup>
+  <ItemGroup>
+    <Compile Include="../../JJPoems/Services/SafeJsonStorage.cs" Link="SafeJsonStorage.cs" />
+    <Compile Include="../../JJPoems/Services/UserWorkspaceService.cs" Link="UserWorkspaceService.cs" />
+    <Compile Include="../../JJPoems/Services/IUserWorkspaceService.cs" Link="IUserWorkspaceService.cs" />
+    <Compile Include="../../JJPoems/Models/UserWorkspaceData.cs" Link="UserWorkspaceData.cs" />
+    <Compile Include="../../JJPoems/Models/UserProfile.cs" Link="UserProfile.cs" />
+  </ItemGroup>
+</Project>

@@ -1,0 +1,128 @@
+{
+  "author": {
+    "name": "JJovky",
+    "role": "Autor introspektívnej a spirituálnej poézie",
+    "biography": "JJovky píše básne, ktoré prepájajú vnútorný nepokoj, duchovno, kritiku doby aj jemné hľadanie pravdy. Texty oscilujú medzi kontempláciou, drsnejšou civilnou výpoveďou a túžbou po pokoji, slobode a láske.",
+    "writingStyle": "Verše sú intuitívne, obrazné a miestami priamočiare. Často pracujú s hovorenou rečou, rytmom, opakovaním, otázkami a kontrastom medzi chaosom sveta a tichom duše.",
+    "inspirations": "Príroda, myseľ, spiritualita, spoločenské dianie, telo, sloboda, samota, láska a vnútorné prebudenie.",
+    "highlights": [
+      "Poézia vedená snahou o pravdivosť, vnútorné očistenie a autenticitu.",
+      "Silné prepojenie medzi osobnou výpoveďou a spoločenskou reflexiou.",
+      "Texty, ktoré chcú hladkať aj provokovať, upokojovať aj prebúdzať."
+    ],
+    "favoriteQuote": "Čo do mňa príde, to zo mňa aj vzíde. A na čo sa zameriam, je iba na mne.",
+    "contactLabel": "Autorský priestor JJovky je pripravený na ďalšie rozšírenie.",
+    "contactUrl": "@jjovky",
+    "portraitImage": "author_portrait.svg"
+  },
+  "poems": [
+    {
+      "id": "vznasanie",
+      "title": "Vznášanie",
+      "theme": "pokoj",
+      "mood": "éterická",
+      "preview": "Hľadenie z oblakov na plochu rozsiahlu,\nA vidieť pritom iba bielu hmlu.",
+      "content": "Hľadenie z oblakov na plochu rozsiahlu\nA vidieť pritom iba bielu hmlu.\n\nKúpanie v bazéne plnom materského mlieka\nA odplávať na miesto neznáme.\n\nZmiznutie búrlivých správ a horúcich noviniek z médií\nA dýchať čisté výpary z nebies.\n\nČistenie od životu nepotrebných návykov,\nA počúvať hlboké vnútro duše.\n\nŠteklenie a jemné vibrácie v každom bode,\nA myšlienky zdochli nadobro.\n\nCítenie nekonečného pokoja a extázy,\nA to bez štipky rozrušenia.\n\nKto vie aké by to bolo,\nVznášanie.",
+      "isFeatured": true
+    },
+    {
+      "id": "lesne-tajomstvo",
+      "title": "Lesné tajomstvo",
+      "theme": "príroda",
+      "mood": "uzemnená",
+      "preview": "Na vrchole kopca, život za horúca.\nPot ma bije, oblak ma sem tam kryje.",
+      "content": "Na vrchole kopca, život za horúca.\nPot ma bije, oblak ma sem tam kryje.\nIba lúč a svetlo, až pred očami mi zbledlo.\n\nDo lesa poslepo kráčam,\nA znovu farby chytám,\nUž aj ľahšie dýcham.\n\nSadám v kľude,\nTu mi lepšie bude\nNež v mestskej búde.\n\nNajprv pozerám a rozmýšľam,\nNeskôr počúvam a vymýšľam,\nNakoniec poznávam a rozjímam.\n\nPri machu čučoriedkové strapce,\nPri strome pracovité mravce,\nPri rieke štebotavé vrabce.\n\nTu dary lesné do náruče zbieram,\nTu tóny vtáčie do rytmu spievam.\nTu vodu skalnú do hrdla vlievam.\n\nKde môže byť hodina málo?\nKde by to za ten čas naozaj stálo?\nKde slobodne vyložiť kálo?\n\nJedine v lese.",
+      "isFeatured": true
+    },
+    {
+      "id": "ovecky-menia-svet",
+      "title": "Ako ovečky menia svet",
+      "theme": "spoločnosť",
+      "mood": "vizionárska",
+      "preview": "Ovečky, kam sme sa to dostali?\nPozrite, vrásky na tvári nám zostali.",
+      "content": "Ovečky, kam sme sa to dostali?\nPozrite, vrásky na tvári nám zostali.\nV stodole začína byť dosť vrelo,\nPrdy, smrad a spotené čelo.\n\nDusené peklo zvané politika zbytočné nervy,\nPri jej počúvaní vyliezajú mi z uší červy.\nTlaky stúpajú, akoby sú ovečky dolu hlavou,\nKľud na duši zachovajú si čerstvou trávou.\n\nMédiá, propaganda, telka, správy, žurnály,\nVšetko nech to skončí v žumpárskom kanály.\nBezbranné ovečky v závore holiť, trestať a dojiť,\nZačali riešiť otázku slobody a museli sa spojiť.\n\nKorporáty kontrolujú svoje ovečky,\nTie sa konečne chytajú za rúčky.\nSpojme hlavy pre lepší svet,\nDruhý už pre nás viacej niet.\n\nUtekajú ovečky z priehrady,\nHneď za kopcom stávajú si záhrady.\nPri záhrade potok priezračný,\nKamienok v ňom našli zázračný.\n\nKamienok splní tri priania,\nOvečky, činte svoje pokánia.\nA feraz veľké dohady,\nČi zlomíme dáke záhady.\n\nPrvé prianie bez rečičiek,\nJe to kríž za záhrade ovečiek,\nLebo pána Božka ľúbia veľmi,\nOchráni ich lepšie ako helmy.\n\nDruhé prianie je venované deťom,\nLebo sú našim budúcim svetom,\nAby boli múdre a poslúchali ich bruchá,\nNechceme, aby žiadna ovečka bola hluchá.\n\nTretie prianie by si už mali dobre rozmyslieť,\nHlúposti sa im môžu pomstiť či zabolieť.\nPreto ovečky spoločne začali jesť trávu,\nPo krátkom čase dostali z nebies správu.\n\nOvplyvniť globálne fungovanie!\nDostali varovanie, že nepomôže ignorovanie, ale zmena.\nZmena samého seba, môžeš začať piecť chleba,\nŠtúdium a veda, vzdelávať sa treba a čo tak ísť do neba?\nTýka sa to teba. Týka sa to nás.\nZvýšiť jas, počúvať boží hlas,\nVyživiť vlas, klas a rásť do krás\nA zas byť len úprimný a pravdivý.\nLebo to je láska,\nA môžeš byť akákoľvek kráska,\nKeď žije v tebe maska,\nStáva sa z teba lepiaca páska.\nAutentickosť, blízkosť a ľudskosť.\nTranscendentálny most.\n\nOvečky, ovečky, ovečky,\nDajte si čerstvej trávičky,\nA zachráňte matičku Zem.\nJedine tak vás spasiem!\n\nPosledné prianie je venované čistej Zemi,\nOvečky zrazu dostali rozum a zmenili vnemy,\nZačali jej načúvať a vysádzať stromy.\nBudovali efektívne zateplené ekodomy.\n\nNáprava škody spôsobenej za dlhé roky,\nVyžiadala úsilie, zmeny a míľové kroky.\nRokmi ovečky spoločne došli na riešenie,\nŽiadne plasty, chémia a iné znečistenie.\n\nVybudovali vlastný systém života,\nKde vládne sloboda a finančná nahota,\nIba vzájomný obchod, žiadna Coop Jednota,\nA zmizol chaos, nadvláda aj temnota.",
+      "isFeatured": false
+    },
+    {
+      "id": "mysel",
+      "title": "Myseľ",
+      "theme": "vnútro",
+      "mood": "premieňajúca",
+      "preview": "Všetko potrebuje riešiť,\nVodu s hlinou aj odpadkami miesiť.",
+      "content": "Všetko potrebuje riešiť,\nVodu s hlinou aj odpadkami miesiť,\nA do toho ľudí kriesiť a hrešiť, potešiť či ponížiť?\n\nTo bremeno na chrbte niesť,\nAni po lúke chcieť sa slobodne prejsť,\nMysľou miesto pocitu nechať sa viesť.\nChce nás zjesť, rozviesť aj po zemi povliecť.\n\nJaaaj, tak len trpí zvedavosťou,\nVnútri starý človek, vonku pôsobí mladosťou.\nViem, že treba život brať s ľahkosťou.\nHrdosťou aj hravosťou.\n\nNeosloví ma téma nudná,\nLebo tá mi nie je predsa súdna,\nAž keď na srdci cítim rytmus bubna.\n\nVtedy je to výzva za triezva a k tomu fešná,\nMyšlienka na prvý pohľad vecou bežná,\nPritom to môže byť zábava aj hra nežná.\n\nPrestalo ma baviť utápať sa v kaši.\nZničený spánok a myseľ ďalej jaší a jaší\nSa tam ako na púšti práši.\nAj mi z toho riadne haraší, bráši.\n\nAž raz som teda do mysle šuter hodil,\nPresným zásahom som ju ihneď skrotil,\nZrodil sa a začal lietať fialový motýľ.\n\nZrazu začal som žiť striedmo,\nAj keď ľudia vravia, že skôr biedno.\nBez alkoholu, drog, sexu, mäsa aj cukru,\nČo je to len za život bez pôžitku, bez bunkru?\n\nPoviem ti, že má to svoje čaro,\nNetreba mi luxusné naleštené fáro.\nPohodlíčko, saláma, vajcá, život bombička,\nNa mňa moc ľahké, chýba mi tam rozcvička.\n\nNie je to ľahké, pripútania či pohodlia sa vzdať,\nAk chceš napredovať, tak z gauča treba vstať.\nZačať život bozkať, mojkať a nebyť bojka,\nNebýť troska ani labilná doska,\nZhlboka dýchať, načúvať a chvíľku počkať na boží odkaz\nA potom rozkaz.\nOn naozaj zanechal vzkaz:\n\nTak, aby som sa najprv netrápil a nedeptal,\nStvoriteľ mi štedro a jasne zaštebotal,\nJJko, nebuď zbytočne v napätí,\nNa dobré sa predsa čakať oplatí.\n\nTreba spomaliť a vychutnávať,\nVýkyvy, náladu aj ľudí narovnávať.\nPravdu sa aj tak časom dozvieš,\nNad situáciou sa treba povzniesť,\nTvoj osud som už spečatil,\nVšetky dlhy som za teba zaplatil.\n\nKaždý raz aj tak umrie v pozemskom svete.\nTak vstávaj, hňupe, a nebuď kretén,\nTreba vymeniť starý dezén,\nDopraj si bazén aj kázeň,\nDémona vyžeň,\nPeneži kľudne zožeň,\nBuď viacej blázen,\nSkladať báseň,\nMať vášeň, viem.\nAj milovať Zem.\n\nA teraz máš moju priazeň.\nUž nie si viac väzeň,\nSi zen.\nNačúvať sám sebe má božskú silu,\nTak začni v sebe stavať tú najdrahšiu vilu.\n\nAle tú prácu už musíš robiť ty sám,\nOdmenu sladučkú ti za to dám.\nNenechaj sa okolím strhávať,\nNetreba sa za hlúposťami naháňať.\nHlavne si cieľ a cestu pripomínaj,\nKontrolky a senzory pozapínaj.\n\nŽivotom duša ďalej zájde, slnko znova výjde.\nVyčistí zamračenú oblohu a v zápätí vzíde,\nKamaríde, že časom mier a pokoj príde.\nĎakujeeeeem.",
+      "isFeatured": true
+    },
+    {
+      "id": "chaodoba",
+      "title": "Chaodoba",
+      "theme": "chaos",
+      "mood": "surová",
+      "preview": "Na slovíčko život pozvem,\nKomu že sa dneska ozvem?",
+      "content": "Na slovíčko život pozvem,\nKomu že sa dneska ozvem?\nKontakty čísla mám,\nDo smotánky zavolám.\nAký je dnešný trend?\nAha, chaosooo, this is the end?\n\nSpotené pazuchy, roztrhané pančuchy,\nBytové macochy, hypotéky a predĺžené záruky,\nMrazené nanuky a do toho fóbia na pavúky.\n\nUmelé tváre, páriky, plastiky a masky,\nVšade iba reklama, videá, fotky, silné párty, srandy aj žarty,\nKomu svet naozaj patrí?\n\nRadosťou byť súčasťou chaodoby,\nTelefón, telka, život online, naše hobby,\nFast food, big hood, depressive mood, move smooth.\nWanna be loud? English my passion. English my vášoň.\nPornoscenes have trashtalk. I have realtalk.\n\nA po týchto chvíľach príde pocit sťa lesná víla,\nMožno začneš uberať kilá,\nA skutočnou hodnotou sa stane vnútorná sila.\n\nSnívame tíško pasívne,\nOtvárame dvere asertívne,\nMíňať lóve za talk so psychológom?\nStačí ísť za pravým kamarátom.\n\nBarátom, hogy megy az élet?\nTak toto je riadny úlet.\nMaďarský fekete letí na rakete, chápete?\n\nV chaose chýbajú komunity,\nMiesto, kde vzniká unity,\nPodpora imunity, trinity.\nTéma sexuality? Totálne bez spirituality.\n\nVýchova mládeže na péčku,\nJasné že im to potom jebká na kečku.\nEšte že sú telky a kompy,\nAspoň sa menej deciek na svet vypumpí.\n\nVážené pupky a milé trojbrady,\nKdeže máte tie ružové záhrady?\nDobrý deň, ja som donáška,\nPapierová taška prišla vaša, seriaky kačka.\nNa druhý deň zrazu hnačka.\n\nChaosvet je peňazí práčka,\nNa ulici iba mačka,\nNik sa vo vlaku ráno nemačká,\nA teraz striedačka! Čo striekačka?\n\nDrogy sú grogy.\nFetka najprv psychicky odoláva,\nNeskôr sa odovzdáva, prichádza chaosláva,\nZrazu je trošku doľava a dílerko nebude zľava?\nUž nemám ani na páva.\nPán sa vzdáva, došla už aj tráva.\nCelý život prsia pláva a potom kraula nezvláda.\nNuž disciplíny chýba nadvláda.\n\nA viete čo je paráda?\nŽe zajtra príde ďalšie chaoráno.\nÁno, niekto si možno hodí lano,\nAle čo si blázen, Jano!\nKámo haló!\nPaľo ráno zas je na mol.\nSlovakian mentalita?\nSlivovica my realita.\nDomáca pálenica?\nAkurát oslepí ťa.\n\nVidíš to?\nCítiš to?\nČo je to?\n\nRozvod a bolí?\nÁno, v chaose zostal sám a holý,\nA cicku sám si žmolí,\nSám tróni aj slzu roní.\nSám, samota, chvíľku žobrota,\nChvíľku dobrota, nakoniec lahoda,\nDuševná pohoda, jahoda a CVRK,\nStala sa nehoda.\n\nLebo stále len bere.\nČo ti pere?\nZistíš čo chceš,\nNapríklad zarábať keš, koľko len vieš,\nA niekto tu zas je domalež,\nZa telkou si hreš a za snom iba v mysli bež.\nHeš! Chaos je trash!\n\nA čo je haluz, každý je iný.\nNiekto má život plný driny a špiny,\nŽije bez viny,\nA za iného sa zas robia vodné mlyny,\nAle tečú mu iba sliny,\nNechytí sa v živote ani hliny a zožerú ho plyny.\n\nJe v poriadku byť iný,\nAj keby ti stekajú z uší hlieny.\nŽivot je čierno-biely a niekedy aj hnedý.\nTak nebuď z toho bledý.\nMôžeš dostať vredy.\nŽe kedy? Povie ti ten, čo má dredy.\nFreddy vyslobodený z biedy. Kiežby.\n\nPrišla chaodoba, priznaj si tiene,\nPrebudiť ducha, čo v nás drieme,\nDávať si pozor na to čo pojeme,\nA otvorene si aj kritiku povieme,\nZ chuti sa na živote zasmejeme,\nAž nakoniec do lásky vyzrejeme.",
+      "isFeatured": false
+    },
+    {
+      "id": "kam-sa-hnat",
+      "title": "Kam sa hnať",
+      "theme": "hľadanie",
+      "mood": "premýšľavá",
+      "preview": "Keď sme sa sem prišli hrať?\nHrať sa so sebou, stať sa kôpkou veselou.",
+      "content": "Keď sme sa sem prišli hrať?\nHrať sa so sebou,\nStať sa kôpkou veselou.\n\nNie je to len tak,\nPrichádza svetský mrak,\nKde je hlavná misia,\nÚtek sám od seba.\nAko sa zbaviť tohto globálneho bremena?\nA začať žiť sťa piť z matkinho vemena?\n\nNuž ovláda nás myseľ.\nAle nie je to nezmysel?\nNemal by som ja ju ovládať?\nČi to ona s nami má narábať?\n\nTelo, buď v kľude!\nAko mám byť v kľude,\nKeď ma bolí hlava a nepomáha mi ani káva?\nTakto žiť nie je žiadna sláva!\n\nNiekto tu začína vymýšľať a vystrájať,\nNa negatívnu vlnu sa dá ľahko napájať,\nTabletky nám pomôžu kontrolky pozhasínať,\nPotom káble dajako bezducho pozapínať.\n\nNo len je takéto telo v správnom režime?\nJe skutočne silné, pružné, odolné či ohybné?\nPlne prítomné a zároveň pokojné?\nAko letný vánok?\nA či chytá ho na spánok?\nA či je pod stresom?\nA či je pod tlakom?\nA či ako ti teda je?!\n\nNetreba to riešiť ani nič hrotiť,\nMá zmysel tú myseľ vôbec krotiť?\nRadšej mi daj návod ako žiť,\nNech hneď môžem ako kráľ byť,\nČím skôr tým lepšie,\nČím ľahšie tým krajšie,\nIdeálne za týždeň sa pochlapiť,\nNech sa môžem verejne pochváliť,\nŽe som to mal,\nŽe som to dal.\n\nOd tohto ideálu je pravda ďaleko,\nNiekde medzi novou dobou a pravekom,\nTen, kto je sám k sebe úprimný,\nTen, kto je trpezlivý, pokorný aj pozorný,\nVie, že skratka dlhodobý výsledok neprináša,\nMôže byť aj Mikuláša,\nA môže veriť v Anciáša,\nModliť sa v mecenáša,\nNo ťažko sa to znáša,\nKeď v lenivosti je paša.\n\nAj inak žiť dá sa a zdá sa,\nŽe to neni o tom či je plná kasa.\nPeňazí. Moci. Hmoty.\n\nTak myseľ ovláda telo a či telo ovláda myseľ?\nNájdi si v tom vlastný zmysel.\nCitlivosť je les,\nTo napätie je des,\nČo do mňa príde,\nTo zo mňa aj vzíde.\nA na čo sa zameriam,\nJe iba na mne.\nA čo do seba dám,\nSi tiež sám vyberám.",
+      "isFeatured": false
+    },
+    {
+      "id": "yoni",
+      "title": "Yoni",
+      "theme": "vzťahy",
+      "mood": "intímna",
+      "preview": "Po 8 rokoch znovu sám,\nNa čom teda zakladám?",
+      "content": "Po 8 rokoch znovu sám,\nNa čom teda zakladám?\nHodnoty a cnosti,\nKto patrí medzi mojich hostí?\n\nA o čom to tu vlastne je?\nMilovať stvorenie je myšlienka na zahodenie?\nZvládnuť ženu je poznanie? Umenie? Márnenie?\n\nTam kde Yoni ovláda svet,\nTo nie je iba lízať med.\nČaká ťa nebeský vzlet,\nAle nebude to hneď,\nJe tam postavená zeď,\nMáš zákaz ísť vpred.\n\nTam kde Yoni ovláda muža,\nVyrastie čierna tŕnistá ruža,\nBuď chlap, čím skôr zober sa a ďalej choď,\nKaždú chvíľu môže ujsť záchranná loď.\n\nAle sú aj miesta kde Yoni je kajúcnica,\nMatke Zemi, Bohovi, mužovi oddaná, milujúca,\nŽiadna hriešnica či lacná tanečnica,\nAle žena srdcom hrejúca, čistá láska vrúca.\n\nKiežby bolo každému milostivej Yoni.\nPríde realita, ťa skosí, nemilosrdne vyhoní,\nOno to bolí, až slza sa zroní,\nZa toto mi to stojí?\nMoji milí, koniec bolí, ale aj to sa zahojí.",
+      "isFeatured": false
+    },
+    {
+      "id": "dym",
+      "title": "Dym",
+      "theme": "premena",
+      "mood": "stručná",
+      "preview": "Všetko čo horí,\nMá v sebe posolstvo ukryté.",
+      "content": "Všetko čo horí,\nMá v sebe posolstvo ukryté,\n\nFarby šedé, z úst sa parí,\nEnergie zeme doň vyryté,\n\nA všetko to stúpa k oblohe,\nDrevo, uhlie,\nAj výpary škody oktávie.\n\nPravda,\nA čo tým činíme?\n\nŽe všetko\nTo smeruje\nK oblohe.",
+      "isFeatured": false
+    },
+    {
+      "id": "madam",
+      "title": "Madam",
+      "theme": "láska",
+      "mood": "zamilovaná",
+      "preview": "Preč z reality za stôl sadám,\nPočúvam hlas budúcej madam.",
+      "content": "Preč z reality za stôl sadám,\nPočúvam hlas budúcej madam.\nNa kolená padám.\n\nV tej chvíli ma šťastie, radosť, láska skoná.\nČas stoná.\nV tej chvíli ma zmrazí,\nZapletený jazyk.\nVtedy ma zahreje,\nUž viem čo suché kvietky poleje.\n\nMilovať ju od základov,\nPresne tak ako ju pán Božko stvoril.\nDodať jej ľúbivých pocitov,\nAby jej dvierka do nebies otvoril.\nMyslieť na ňu bez dôvodov,\nAby ochranca Duch nikdy nezablúdil.\n\nUž viem čoho som neschopný,\nVypustiť ťa z hlavy.\nUtkvela tam dievčina.\nUž navždy.",
+      "isFeatured": false
+    },
+    {
+      "id": "cesta",
+      "title": "Cesta",
+      "theme": "smer",
+      "mood": "pokorná",
+      "preview": "Zaujímavé na zemi,\nKoľkými môžeme ísť trasami.",
+      "content": "Zaujímavé na zemi,\nKoľkými môžeme ísť trasami,\nNeustále meniace sa miesto,\nAj keď x-krát som išiel tou cestou,\nA možno práve preto,\nŽe po daždi vytvorí sa blato.\n\nA krokmi na ceste získame,\nČo rokmi vo vetre si pískame,\nA podľa toho kam zájdeme,\nČo hľadáme, to aj nájdeme.\n\nKým jednému niečo celý život trvá,\nDruhý za deň Pravdu spoznáva.",
+      "isFeatured": true
+    },
+    {
+      "id": "logos",
+      "title": "Logos",
+      "theme": "slovo",
+      "mood": "prorocká",
+      "preview": "Aj krásne slová sú občas márne,\nVták krídlom mávne, a uletí.",
+      "content": "Aj krásne slová sú občas márne,\nVták krídlom mávne,\nA uletí.\nBuď sa k tebe vráti,\nPrivíta ťa vždy v objatí,\nAlebo ťa nožom prebodne,\nNavždy sa na teba zabudne,\nV tichosti.\nV bolesti.\nPrichádza nové vedomie,\nOdpustenie a vzkriesenie.\n\nV jednodu-tichosti je krása,\nRozprávať nezmysly je ľahké, je to fasa,\nNo ústa ako prázdna kasa,\nNo telo sťa vypasené prasa.\nČo to trepeš zasa.\n\nĽudia robia poriadne neplechy,\nPod pazuchami voňajú rybie zápachy.\nStopy činov schované v tme,\nStrach skrýva smiech v tejto hre.\n\nV mysli striedam slová častejšie než je potrebné,\nSlovo slovom zlomené,\nPíšem riadky hlavou trafené.\nA čo? Že načo?\n\nNiekto prepína programy,\nNiekto robí programy.\nNa starosti môžeš mať toľko vecí,\nŽe tak ďaleko nikto z nás nedovidí.\nA čo z toho stihnúť?\nA čo z toho strihnúť?\n\nMoja voľba,\nMoja sloboda,\nMoje Logos.\n\nV poriadku je aj umelecká maľba,\nV poriadku je aj život = kalba.\nV poriadku je aj streľba,\nAj keď to už je trošku iná jeba.\nTaký ťa pošle rovno do neba.\nMožno je to tak lepšie pre teba.",
+      "isFeatured": false
+    },
+    {
+      "id": "definicia",
+      "title": "Definícia",
+      "theme": "závislosť",
+      "mood": "odhaľujúca",
+      "preview": "Základom všetkých závislostí je túžba po láske.\nTúžba po prijatí a láskyplnom dotyku.",
+      "content": "Základom všetkých závislostí je túžba po láske.\nTúžba po prijatí a láskyplnom dotyku.\nPotreba prijímať lásku je potreba na rôznych úrovniach.\nNeha, blízkosť, intimita.\n\nA vraj:\nLáska ide cez žalúdok.\nNaozaj?\nMáš v tom poriadok?\nAle netáraj.\nHolúbok.\n\nTo jedlo poskytuje skutočnú slasť.\nPozor, je to pasť.\n\nKonzumácia je stimulácia,\nPlnosť cez dočasnú sýtosť.\nZdroj má sedatívne účinky.\nMilujeme sladké a proteínové tyčinky.\n\nHoldujeme a poddali sa jedlu,\nDal by som si vyprážanú bedľu.\nNadmerná miera otupuje.\nMmm, dal by som si ešte.\nPocit nedostatku.\nAž do budúceho piatku.\n\nSvedomie tlačí.\nZdravie platí.\nA telo trucuje.\nČo mi to teraz je?\n\nStále nemám dosť,\nNemôžem byť iba koža a kosť.\nNa zimu tukové zásoby,\nNie sú to iba drísty akoby?\n\nAko mi chýba láska môžem ignorovať, vypnúť,\nNa tento problém mi jedlo pomáha zabudnúť.\nAko moc nenaplnený a prázdny život je.\nAko aj každý deň párty ma pomaly a isto zabije.\n\nNávyky z detstva tomu nijak nepomohli,\nKeď sme bývali sladkým odmeňovaní.\n\nZ jedla pocit,\nŽe som prijímaný,\nŽe som v poriadku.\nHoci,\nBez jedla som nervózny,\nA keď na mňa ešte niečo prehovoríš,\nDostaneš na búdku.\n\nTak aké to je, žiť o hlade?\n\nMať sám seba na prvom mieste,\nViem kto som na svojej ceste?\nDharma stanoví,\nTak pre koho žijeme?",
+      "isFeatured": false
+    }
+  ]
+}

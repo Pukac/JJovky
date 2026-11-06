@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage
+    x:Class="JJPoems.Views.UserWritingEditorPage"
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:viewModels="clr-namespace:JJPoems.ViewModels"
+    x:DataType="viewModels:UserWritingEditorViewModel"
+    Title="{Binding Title}">
+
+    <ScrollView>
+        <VerticalStackLayout Padding="24,18,24,32" Spacing="18">
+            <Border Style="{StaticResource HeroCardStyle}">
+                <VerticalStackLayout Spacing="16">
+                    <Label Text="{Binding HeaderTitle}" Style="{StaticResource OverlineLabelStyle}" />
+                    <Label Text="{Binding HeaderBody}" Style="{StaticResource HeroBodyLabelStyle}" />
+                    <Label
+                        Text="{Binding DraftStatus}"
+                        Style="{StaticResource CaptionLabelStyle}" />
+                </VerticalStackLayout>
+            </Border>
+
+            <Border
+                Style="{StaticResource PremiumPanelStyle}"
+                BackgroundColor="{Binding SectionPreviewSurfaceHex}"
+                Stroke="{Binding SectionPreviewBorderHex}">
+                <VerticalStackLayout Spacing="16">
+                    <Entry Placeholder="{Binding TitlePlaceholder}" Text="{Binding TitleText}" />
+
+                    <Editor
+                        AutoSize="TextChanges"
+                        MinimumHeightRequest="320"
+                        Placeholder="{Binding ContentPlaceholder}"
+                        Text="{Binding Content}" />
+
+                    <Border BackgroundColor="{Binding SectionPreviewSurfaceHex}" Stroke="{Binding SectionPreviewBorderHex}" StrokeShape="RoundRectangle 18" Padding="14">
+                        <VerticalStackLayout Spacing="10">
+                            <HorizontalStackLayout Spacing="8">
+                                <Border BackgroundColor="{Binding SectionPreviewAccentHex}" HeightRequest="10" WidthRequest="10" StrokeThickness="0" StrokeShape="RoundRectangle 5" />
+                                <Label Text="{Binding Section}" TextColor="{Binding SectionPreviewAccentHex}" FontFamily="{StaticResource SansFontSemiBold}" />
+                            </HorizontalStackLayout>
+                            <Label Text="Ak chces, mozes svoj rychly zachyt doladit a zaradit do konkretnej sekcie." Style="{StaticResource CaptionLabelStyle}" />
+                            <Picker Title="Sekcia" ItemsSource="{Binding SectionOptions}" SelectedItem="{Binding Section}" />
+                            <Entry Placeholder="Nalada alebo stitok" Text="{Binding Mood}" />
+                            <Picker
+                                Title="Farebny akcent bloku"
+                                ItemsSource="{Binding PaletteOptions}"
+                                ItemDisplayBinding="{Binding Name}"
+                                SelectedItem="{Binding SelectedPaletteOption}" />
+                        </VerticalStackLayout>
+                    </Border>
+                </VerticalStackLayout>
+            </Border>
+
+            <Grid ColumnDefinitions="*,*" ColumnSpacing="12">
+                <Button Grid.Column="0" Text="{Binding PrimaryButtonText}" Style="{StaticResource PrimaryButtonStyle}" Command="{Binding SaveCommand}" />
+                <Button Grid.Column="1" Text="Vymazat" Style="{StaticResource SecondaryButtonStyle}" Command="{Binding DeleteCommand}" IsVisible="{Binding IsExisting}" />
+            </Grid>
+        </VerticalStackLayout>
+    </ScrollView>
+</ContentPage>

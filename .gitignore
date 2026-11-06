@@ -1,0 +1,31 @@
+# Build output and local IDE state
+**/bin/
+**/obj/
+**/.vs/
+*.user
+*.suo
+*.log
+
+# Local SDK and package caches
+.dotnet/
+.nuget/
+.templateengine/
+
+# Generated install packages (publish separately as release assets)
+artifacts/
+*.apk
+*.aab
+*.idsig
+
+# Credentials and signing material
+.env
+.env.*
+!.env.example
+*.keystore
+*.jks
+*.pfx
+*.p12
+
+# OS metadata
+Thumbs.db
+.DS_Store

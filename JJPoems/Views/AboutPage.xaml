@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage
+    x:Class="JJPoems.Views.AboutPage"
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:sys="clr-namespace:System;assembly=System.Runtime"
+    xmlns:viewModels="clr-namespace:JJPoems.ViewModels"
+    x:DataType="viewModels:AboutViewModel"
+    Title="O kolekcii">
+
+    <ScrollView>
+        <VerticalStackLayout Padding="24,18,24,32" Spacing="18">
+            <Label Text="Vyvojova kolekcia" Style="{StaticResource PageTitleLabelStyle}" />
+
+            <Border Style="{StaticResource PremiumPanelStyle}">
+                <Label Text="Tato cast sluzi ako developerska a inspiracna vrstva. Realna appka je navrhnuta tak, aby hlavnym obsahom boli vlastne texty kazdeho pouzivatela, nie prednahraty profil." Style="{StaticResource BodyMutedLabelStyle}" />
+            </Border>
+
+            <Border Style="{StaticResource CardBorderStyle}">
+                <VerticalStackLayout Spacing="18">
+                    <Image Source="{Binding Author.PortraitImage}" HeightRequest="220" Aspect="AspectFit" />
+                    <VerticalStackLayout Spacing="8">
+                        <Label Text="{Binding Author.Name}" Style="{StaticResource PoemTitleLabelStyle}" />
+                        <Label Text="{Binding Author.Role}" Style="{StaticResource BodyMutedLabelStyle}" />
+                    </VerticalStackLayout>
+                    <Label Text="{Binding Author.Biography}" Style="{StaticResource BodyMutedLabelStyle}" />
+                </VerticalStackLayout>
+            </Border>
+
+            <Border Style="{StaticResource CardBorderStyle}">
+                <VerticalStackLayout Spacing="14">
+                    <Label Text="Styl pisania" Style="{StaticResource SectionTitleLabelStyle}" />
+                    <Label Text="{Binding Author.WritingStyle}" Style="{StaticResource BodyMutedLabelStyle}" />
+                    <Label Text="Inspiracie" Style="{StaticResource SectionTitleLabelStyle}" />
+                    <Label Text="{Binding Author.Inspirations}" Style="{StaticResource BodyMutedLabelStyle}" />
+                </VerticalStackLayout>
+            </Border>
+
+            <Border Style="{StaticResource CardBorderStyle}">
+                <VerticalStackLayout Spacing="12" BindableLayout.ItemsSource="{Binding Author.Highlights}">
+                    <Label Text="Zaujimavosti a uspechy" Style="{StaticResource SectionTitleLabelStyle}" />
+                    <BindableLayout.ItemTemplate>
+                        <DataTemplate x:DataType="sys:String">
+                            <Label Style="{StaticResource BodyMutedLabelStyle}" Text="{Binding StringFormat='• {0}'}" />
+                        </DataTemplate>
+                    </BindableLayout.ItemTemplate>
+                </VerticalStackLayout>
+            </Border>
+
+            <Border Style="{StaticResource CardBorderStyle}" BackgroundColor="{DynamicResource ThemeSecondaryBackground}">
+                <VerticalStackLayout Spacing="10">
+                    <Label Text="Oblubeny citat" Style="{StaticResource SectionTitleLabelStyle}" />
+                    <Label Text="{Binding Author.FavoriteQuote}" Style="{StaticResource PoemBodyLabelStyle}" FontSize="18" />
+                    <Label Text="{Binding Author.ContactLabel}" Style="{StaticResource BodyMutedLabelStyle}" />
+                    <Label Text="{Binding Author.ContactUrl}" TextColor="{DynamicResource ThemeAccent}" />
+                </VerticalStackLayout>
+            </Border>
+        </VerticalStackLayout>
+    </ScrollView>
+</ContentPage>
